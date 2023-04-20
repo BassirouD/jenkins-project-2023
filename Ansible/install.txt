@@ -1,0 +1,19 @@
+Requirements:
+
+*Control node:
+	python >= 2.7
+	tout sauf windows
+	ssh/scp
+
+*Managed node:
+	python >= 2.6
+
+Diff types d'inttallation:
+	paquets des distributions
+	librairie python
+	binaire
+	docker(abandonné)
+
+
+avec pip
+==>python3 -m pip install --user ansible
