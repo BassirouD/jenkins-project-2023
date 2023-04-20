@@ -1,0 +1,2 @@
+Test ping node:
+==>ansible -i "node-one," all -m ping
