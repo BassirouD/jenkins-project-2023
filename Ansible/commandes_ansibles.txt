@@ -1,2 +1,24 @@
 Test ping node:
 ==>ansible -i "node-one," all -m ping
+
+Test ping node using file.ini
+
+==>nano test.ini and add following code
+********************************
+[all]
+node-local ansible_connection=local
+node-one ansible_ssh_host=diallo@192.168.189.129
+node-two ansible_ssh_host=diallo@192.168.189.130
+
+[local]
+node-local
+
+[distants]
+node-one
+
+[distants]
+node-two
+*********************************
+==> ansible all -m ping -i test.ini(To ping all node)
+==>ansible distants -m ping -i test.ini(To ping all node distants)
+==>ansible local -m ping -i test.ini(TO ping local node)
