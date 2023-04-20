@@ -1,8 +1,8 @@
-Test ping node:
+====================Test ping node:======================
 ==>ansible -i "node-one," all -m ping
 
-Test ping node using file.ini
 
+=================Test ping node using file.ini=============
 ==>nano test.ini and add following code
 ********************************
 [all]
@@ -22,3 +22,21 @@ node-two
 ==> ansible all -m ping -i test.ini(To ping all node)
 ==>ansible distants -m ping -i test.ini(To ping all node distants)
 ==>ansible local -m ping -i test.ini(TO ping local node)
+
+================Create file using cli====================
+==>ansible node-one -a 'touch toto_form_ansible.txt' -i test.ini
+
+================Create file using playbook file====================
+==>nano play1.yml
+add following code in file
+*********************************************
+- hosts: node-one
+  remote_user: diallo
+  tasks:
+    - shell: echo Hello world > toto_form_ansible_book.txt
+*********************************************
+==>ansible-playbook -i test.ini play1.yml(execute file)
+
+
+
+
