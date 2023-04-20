@@ -1,0 +1,19 @@
+gen key pair
+==>ssh-keygen -t ecdsa -b 521
+
+copy it on dest machine
+==>ssh-copy-id diallo@192.168.189.129(linux)
+
+==>scp .\id_ecdsa.pub diallo@192.168.189.129:/home/diallo(windows)
+==>cat id_ecdsa.pub >> .ssh/authorized_keys(on server)
+
+or whe can create config file on .ssh
+==>sudo nano .ssh/config
+and following input
+==>Host node-two
+    HostName 192.168.189.130
+    User diallo
+    Port 22
+
+and use following command to connect
+==>ssh node-two
