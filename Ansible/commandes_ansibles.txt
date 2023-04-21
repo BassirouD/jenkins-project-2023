@@ -1,3 +1,18 @@
+************************les options*************************
+-u: user distant utilisé
+-b: passer les commandes en élévation de privilèges(sudo)
+-k ou --ask-pass: password ssh
+-K ou --ask-become-pass:  password pour élévation de privilège
+-C ou --check: faire un dry run
+-D ou --diff: avoir un outpout de la diff
+--key-file: lien direct vers la clé privée
+-e ou --extra-vars: définir des variablesc
+--ask-vault-pass: déchiffrer un secret vault
+--vault:password-file: fichier pour déchiffrer
+-f ou --forks: parralléliser
+-vvv: verbose
+
+
 ====================Test ping node:======================
 ==>ansible -i "node-one," all -m ping
 
