@@ -91,8 +91,9 @@ And add following commands in file
         state: stopped
     - name: Uninstall nginx service
       apt:
-        name: nginx
+        name: nginx*
         state: absent
+	  purge: yes
 **********************************************************
 ==> ansible-playbook -i hosts.ini playbook_unintall_nginx.yml(to execute)
 
@@ -109,4 +110,6 @@ When use "raw" module when the managed node dont have python installed on
 
 ==================Uninstalling nginx using apt module on cli=====================
 ==>ansible -i hosts.ini node-one -u diallo -b -K -m apt -a "name=*nginx* state=absent purge=yes"
+
+
 
