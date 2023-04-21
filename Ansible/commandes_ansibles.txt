@@ -38,5 +38,45 @@ add following code in file
 ==>ansible-playbook -i test.ini play1.yml(execute file)
 
 
+====================================================================================
+===============Exemple install and uninstall nginx service playbook=================
 
+---------------Install--------------------------
+==>nano playbook_intall_nginx.yml
+And add following commands in file
+*****************************************************
+- hosts: node-two
+  become: yes
+  remote_user: diallo
+  tasks:
+    - name: installation de nginx
+      apt:
+        update_cache: yes
+        name: nginx
+        state: latest
+    - name: is running
+      service:
+        name: nginx
+        state: started
+********************************************************
+==>ansible-playbook -i hosts.ini playbook_intall_nginx.yml(to execute)
 
+---------------Uninstall--------------------------
+==>nano playbook_unintall_nginx.yml
+And add following commands in file
+
+***********************************************************
+- hosts: node-two
+  become: yes
+  remote_user: diallo
+  tasks:
+    - name: stop service nginx
+      service:
+        name: nginx
+        state: stopped
+    - name: Uninstall nginx service
+      apt:
+        name: nginx
+        state: absent
+**********************************************************
+==> ansible-playbook -i hosts.ini playbook_unintall_nginx.yml(to execute)
