@@ -114,3 +114,7 @@ When use "raw" module when the managed node dont have python installed on
 ===================================================================================
 =====================Copy file using copy module==============================
 ==>ansible -i hosts.ini node-one -u diallo -b -K -m copy -a "src=cop_file dest=/tmp/cop_file"
+
+===============Get file from manged node using fetch module===================
+
+== ansible -i hosts.ini node-one -u diallo -b -K -m fetch -a "src=/tmp/cop_file dest=/home/diallo/ansible_commands/rec_file flat=yes"
