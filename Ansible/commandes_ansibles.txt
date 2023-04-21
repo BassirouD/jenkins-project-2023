@@ -100,5 +100,10 @@ And add following commands in file
 When use "raw" module when the managed node dont have python installed on
 ==>ansible -i hosts.ini node-one -u diallo -b -K -m raw -a "apt install -y git"
 
-==================Installing nginx nginx using apt module on cli===================
+=====================================================================================
+==================Installing nginx using apt module on cli=====================
 ==>ansible -i hosts.ini node-one -u diallo -b -K -m apt -a "name=nginx state=latest"
+
+==================Stopping nginx using service module on cli=====================
+==>ansible -i hosts.ini node-one -u diallo -b -K -m service -a "name=nginx state=stopped"
+
