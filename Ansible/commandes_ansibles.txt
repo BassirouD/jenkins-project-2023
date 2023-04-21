@@ -95,3 +95,7 @@ And add following commands in file
         state: absent
 **********************************************************
 ==> ansible-playbook -i hosts.ini playbook_unintall_nginx.yml(to execute)
+
+
+When use "raw" module when the managed node dont have python installed on
+==>ansible -i hosts.ini node-one -u diallo -b -K -m raw -a "apt install -y git"
