@@ -111,5 +111,6 @@ When use "raw" module when the managed node dont have python installed on
 ==================Uninstalling nginx using apt module on cli=====================
 ==>ansible -i hosts.ini node-one -u diallo -b -K -m apt -a "name=*nginx* state=absent purge=yes"
 
-
-
+===================================================================================
+=====================Copy file using copy module==============================
+==>ansible -i hosts.ini node-one -u diallo -b -K -m copy -a "src=cop_file dest=/tmp/cop_file"
