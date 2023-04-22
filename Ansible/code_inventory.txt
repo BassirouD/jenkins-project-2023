@@ -19,3 +19,5 @@ all:
         dbserver:
         
 #On peut supprimer les lignes 14-15 et 8-9 pour qu'il recup les variables depuis les fichiers
+
+#ansible-inventory-grapher -i 00_inventory.yml all | dot -Tpng | display png:-
