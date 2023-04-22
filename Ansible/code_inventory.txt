@@ -1,0 +1,21 @@
+all:
+  children:
+    common:
+      children:
+        webserver:
+          hosts:
+            node[1:2]:
+          vars:
+            var1: "webserver"
+        dbserver:
+          hosts:
+            node2:
+              var1: "node2"
+          vars: 
+            var1: "dbserver"
+    monitoring:
+      children:
+        webserver:
+        dbserver:
+        
+#On peut supprimer les lignes 14-15 et 8-9 pour qu'il recup les variables depuis les fichiers
